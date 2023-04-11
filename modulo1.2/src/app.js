@@ -1,39 +1,16 @@
 'use strict';
 
-import React, { Component } from 'react';
-import Timer from './timer';
+import React from 'react';
+import Button from './button';
 
-class App extends Component {
-  constructor() {
-    console.log('constructor - app');
-    super();
-    this.state = {
-      showTimer: true,
-      time: 0,
-    };
-  }
-
-  componentWillMount() {
-    console.log('componentWillMount - app');
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount - app');
-  }
-
-  componentWillUnmount() {}
-
-  render() {
-    console.log('render - app');
+const App = React.createClass({
+  render: function () {
     return (
       <div>
-        <Timer time={this.state.time} />
-        <button onClick={() => this.setState({ time: this.state.time + 10 })}>
-          Change Props
-        </button>
+        <Button handleClick={() => console.log('clicou')}>Clique em mim</Button>
       </div>
     );
-  }
-}
+  },
+});
 
 export default App;
