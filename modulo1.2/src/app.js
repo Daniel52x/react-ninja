@@ -8,6 +8,7 @@ class App extends Component {
     super();
     this.state = {
       value: 'Valor incial',
+      checked: false,
     };
   }
   render() {
@@ -23,6 +24,15 @@ class App extends Component {
               });
             }}
           />
+          <label>
+            <input
+              type="checkbox"
+              value="my-checked"
+              checked={this.state.checked}
+              onChange={(e) => this.setState({ checked: e.target.checked })}
+            />
+            Checkbox
+          </label>
         </form>
       </div>
     );
