@@ -7,32 +7,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      value: 'Valor incial',
-      checked: false,
+      value: 2,
     };
   }
+
   render() {
     return (
       <div>
         <form action="">
-          <input
-            type="text"
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
             value={this.state.value}
-            onChange={(e) => {
-              this.setState({
-                value: e.target.value,
-              });
-            }}
+            onChange={(e) => this.setState({ value: e.target.value })}
           />
-          <label>
-            <input
-              type="checkbox"
-              value="my-checked"
-              checked={this.state.checked}
-              onChange={(e) => this.setState({ checked: e.target.checked })}
-            />
-            Checkbox
-          </label>
         </form>
       </div>
     );
