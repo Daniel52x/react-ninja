@@ -6,10 +6,10 @@ import UserInfo from './user-info';
 import Actions from './actions';
 import Repos from './repos';
 
-const AppContent = ({ userInfo, repos, starred }) => {
+const AppContent = ({ userInfo, repos, starred, handleSearch }) => {
   return (
     <div className="app">
-      <Search />
+      <Search handleSearch={handleSearch} />
 
       {!!userInfo && <UserInfo userinfo={userInfo} />}
       {!!userInfo && <Actions />}
@@ -25,9 +25,10 @@ const AppContent = ({ userInfo, repos, starred }) => {
 };
 
 AppContent.propTypes = {
-  userInfo: React.PropTypes.object.isRequired,
+  userInfo: React.PropTypes.object,
   repos: React.PropTypes.array.isRequired,
   starred: React.PropTypes.array.isRequired,
+  handleSearch: React.PropTypes.func.isRequired,
 };
 
 export default AppContent;
