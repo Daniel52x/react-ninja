@@ -11,4 +11,9 @@ const Actions = ({ getRepos, getStarred }) => {
   );
 };
 
+Actions.propTypes = {
+  getRepos: React.PropTypes.func.isRequired,
+  getStarred: React.PropTypes.func.isRequired,
+};
+
 export default Actions;

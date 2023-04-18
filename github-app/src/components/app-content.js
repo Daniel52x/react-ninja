@@ -37,7 +37,10 @@ AppContent.propTypes = {
   userInfo: React.PropTypes.object,
   repos: React.PropTypes.array.isRequired,
   starred: React.PropTypes.array.isRequired,
+  isFetching: React.PropTypes.bool.isRequired,
   handleSearch: React.PropTypes.func.isRequired,
+  getRepos: React.PropTypes.func.isRequired,
+  getStarred: React.PropTypes.func.isRequired,
 };
 
 export default AppContent;
