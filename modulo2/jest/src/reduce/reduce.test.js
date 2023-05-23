@@ -2,6 +2,7 @@
 
 import { expect } from 'chai';
 import reduce from './reduce';
+import reduceRight from './reduce-right';
 
 it('reduce should be a function', () => {
   expect(reduce).to.be.a('function');
@@ -51,5 +52,15 @@ it('reduce([1, 2], (acc, item, index, array) => acc + array[index], 0) should re
     0,
   );
   const after = 3;
+  expect(before).to.be.equal(after);
+});
+
+it('reduceRight(["do", "nan", "Fer"], (acc, item) => acc + item, "") shoud return "Fernando"', () => {
+  const before = reduceRight(
+    ['do', 'nan', 'Fer'],
+    (acc, item) => acc + item,
+    '',
+  );
+  const after = 'Fernando';
   expect(before).to.be.equal(after);
 });
